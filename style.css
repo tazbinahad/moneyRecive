@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 /* Root css */
 * {
   margin: 0;
@@ -8,8 +8,8 @@
 body {
   width: 100%;
   height: 100vh;
-  font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 8px;
 }
 h1,
 h2,
@@ -28,22 +28,24 @@ table {
 }
 th,
 td {
-  border: 1px solid #D6DADD;
+  border: 1px solid #6e6e6e;
   padding: 6px 12px;
+  text-transform: uppercase;
+  font-size: 8px;
+  font-weight: 500;
 }
 /* tr:nth-child(even) {
   background: #f6f7f9;
 } */
 th {
   background-color: #54b6e7;
-  font-size: 14px;
   font-weight: 500;
   color: #fff;
   text-align: left;
   text-transform: uppercase;
+  cursor: pointer;
 }
 td {
-  font-size: 14px;
   letter-spacing: 0.1px;
   word-wrap: break-word;
 }
@@ -53,12 +55,70 @@ td {
     margin: 0 auto;
 }
 
-td.tickbox {
+.tickbox {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.inputCheck{
-
+.inputCheck[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  padding: 2px;
+  line-height: 10px;
+  background-color: #ffff;
+  border: 1px solid grey;
+  border-radius: 2px;
+  cursor: pointer;
 }
+.inputCheck[type="checkbox"]::after{
+  content: url('./check-solid.svg');
+  color: grey;
+  display: none;
+}
+.inputCheck[type="checkbox"]:checked::after{
+  display: block;
+}
+
+
+td.currency {
+  position: relative;
+  text-align: right;
+}td.currency::before {
+  content: "$";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 15px;
+  text-align: left;
+}
+td.checkNumber{
+  position: relative;
+  text-align: right;
+  font-weight: 500;
+}
+td.checkNumber::before {
+  content: "CHECK NUMBER:";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 15px;
+  text-align: left;
+  top: 25%;
+  font-weight: normal;
+}
+
+/* Additional Classer */
+.normalText{
+  font-weight: normal;
+}
+.w-35{
+  width: 30%;
+}
+.font-10{
+  font-size: 10px;
+}
+
+/*  */
